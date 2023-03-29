@@ -54,6 +54,9 @@ def user_add(request):
             return redirect('/user')
         else:
             return render(request, 'katachi/user_add_form.html', {"form":form})
-def user_delete(request):
+def user_delete(request,number):
     if request.method == "GET":
+        print(number)
+        user = User.objects.get(pk=number)
+        user.delete()
         return redirect('/user')
