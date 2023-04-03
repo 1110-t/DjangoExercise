@@ -64,9 +64,10 @@ def user_add(request):
         else:
             # バリデーションにエラーが生じた場合、入力画面に戻す
             return render(request, 'katachi/user_add_form.html', {"form":form})
+# ユーザー削除
 def user_delete(request,number):
+    # GET通信の場合
     if request.method == "GET":
-        print(number)
-        user = User.objects.get(pk=number)
-        user.delete()
+        user = User.objects.get(pk=number) # 該当するIDのユーザーを取得する
+        user.delete() # 取得したユーザーを削除する
         return redirect('/user')
