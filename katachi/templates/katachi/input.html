@@ -10,19 +10,21 @@
 <body>
 <div class="container">
 <div class="row justify-content-center">
-<!-- GETの場合 -->
+<!-- GETの場合 GETパラメータ-->
 <!-- 
 <form action="./" method="GET">
     <input name="name" value={{name}}>
     <button type="submit">送信</button>
-</form>
--->
-<!-- POSTの場合 -->
+</form> -->
+
+<!-- POSTの場合 POSTパラメータ-->
 <!-- <form action="./" method="POST">
     {% csrf_token %}
     <input name="name" value={{name}}>
     <button type="submit">送信</button>
 </form> -->
+
+<!-- プロフィール登録画面を作ってみましょう -->
 <form class="col-sm-6" method="POST">{% csrf_token %}
     <h1 class="text-center">プロフィール</h1>
     {% for field in form %}
